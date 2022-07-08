@@ -1,5 +1,6 @@
 {
    "editor.acceptSuggestionOnEnter": "off",
+   "editor.hover.delay": 500,
    "editor.quickSuggestionsDelay": 750,
    "cSpell.words": [
       "eqeqeq"

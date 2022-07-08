@@ -1,8 +1,12 @@
 import { Html, Head, Main, NextScript } from "next/document";
-import { useRef } from "react";
+import { useEffect } from "react";
+import AOS from "aos";
 
 function Document() {
-   const HTML = useRef();
+   useEffect(() => {
+      console.log("AOS Initialized!")
+      AOS.init();
+   }, []);
 
    return (
       <Html lang="en">

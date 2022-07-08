@@ -5,12 +5,33 @@
     "node": true,
     "es2022": true
   },
-  "extends": "next/core-web-vitals",
+  "plugins": [
+    "react"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "next/core-web-vitals"
+  ],
   "rules": {
     "eqeqeq": "off",
     "curly": "error",
-    "quotes": ["error", "double"],
+    "quotes": [
+      "error",
+      "double"
+    ],
     "no-eval": "error",
-    "indent": ["error", 3]
+    "indent": [
+      "error",
+      3
+    ],
+    "no-unused-vars": "warn",
+    "no-unused-expressions": "warn",
+    "no-unused-labels": "warn"
   }
 }
