@@ -17,12 +17,14 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
+    "baseUrl": ".",
     "paths": {
-      "components/*": ["./src/components/*"],
-      "hooks/*": ["./src/hooks/*"],
-      "features/*": ["./src/features/*"],
-      "pages/*": ["./src/pages/*"],
-      "styles/*": ["./styles/*"]
+      "@components/*": ["./src/components/*"],
+      "@hooks/*": ["./src/hooks/*"],
+      "@features/*": ["./src/features/*"],
+      "@pages/*": ["./src/pages/*"],
+      "@styles/*": ["./styles/*"],
+      "@layouts/*": ["./src/layouts/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
