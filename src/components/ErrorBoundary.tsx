@@ -1,5 +1,5 @@
 import { ErrorProps } from "next/error";
-import React, { Component, ReactNode } from "react";
+import React, { Component, JSXElementConstructor, ReactNode } from "react";
 
 interface errorBoundaryType {
    children?: ReactNode

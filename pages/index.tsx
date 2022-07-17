@@ -1,22 +1,21 @@
+/* eslint-disable curly */
 import type { NextPage } from "next";
 import Head from "next/head";
-import { useEffect, useState, useRef } from "react";
-import ErrorBoundary from "../components/ErrorBoundary";
+import { useRef } from "react";
+import ErrorBoundary from "../src/components/ErrorBoundary";
 
 interface user_info {
-   firstName: string | undefined,
-   lastName: string | undefined,
-   middleName: string | undefined,
-   age: number | undefined,
-   address: string | undefined,
-   email: string | undefined
+   firstName: string | undefined;
+   lastName: string | undefined;
+   middleName: string | undefined;
+   age: number | undefined;
+   address: string | undefined;
+   email: string | undefined;
 }
 
 // components
 
 const Home: NextPage = () => {
-   const [_window, setWindow] = useState<Window | null>(null);
-   const [_doc, setDoc] = useState<Document | null>(null);
 
    const firstNameHolder = useRef<HTMLInputElement>(null);
    const lastNameHolder = useRef<HTMLInputElement>(null);
@@ -25,11 +24,6 @@ const Home: NextPage = () => {
    const addressHolder = useRef<HTMLInputElement>(null);
    const emailHolder = useRef<HTMLInputElement>(null);
 
-   useEffect(() => {
-      setWindow(window);
-      setDoc(document);
-   }, []);
-
    function handleSubmit(): void {
       const user: user_info = {
          firstName: firstNameHolder.current?.value,
@@ -37,8 +31,15 @@ const Home: NextPage = () => {
          middleName: middleNameHolder.current?.value,
          age: parseFloat(ageHolder.current?.value as string),
          address: addressHolder.current?.value,
-         email: emailHolder.current?.value
+         email: emailHolder.current?.value,
       };
+
+      if (!user.firstName) return;
+      if (!user.lastName) return;
+      if (!user.middleName) return;
+      if (!user.age) return;
+      if (!user.address) return;
+      if (!user.email) return;
    }
 
    return (
@@ -50,23 +51,21 @@ const Home: NextPage = () => {
 
          <ErrorBoundary>
             <div className="">
-               <form>
-                  <p>FirstName</p>
-                  <input type="text" ref={firstNameHolder} required />
-                  <p>LastName</p>
-                  <input type="text" ref={lastNameHolder} required />
-                  <p>MiddleName</p>
-                  <input type="text" ref={middleNameHolder} required />
-                  <p>Age</p>
-                  <input type="text" ref={ageHolder} required />
-                  <p>Address</p>
-                  <input type="text" ref={addressHolder} required />
-                  <p>Email</p>
-                  <input type="text" ref={emailHolder} required />
-                  <button type="submit" onClick={() => handleSubmit()}>
-                     Submit
-                  </button>
-               </form>
+               <p>FirstName</p>
+               <input type="text" ref={firstNameHolder} required />
+               <p>LastName</p>
+               <input type="text" ref={lastNameHolder} required />
+               <p>MiddleName</p>
+               <input type="text" ref={middleNameHolder} required />
+               <p>Age</p>
+               <input type="text" ref={ageHolder} required />
+               <p>Address</p>
+               <input type="text" ref={addressHolder} required />
+               <p>Email</p>
+               <input type="text" ref={emailHolder} required />
+               <button type="submit" onClick={() => handleSubmit()}>
+                  Submit
+               </button>
             </div>
          </ErrorBoundary>
       </>
