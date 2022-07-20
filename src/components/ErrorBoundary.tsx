@@ -5,7 +5,7 @@ interface errorBoundaryType {
    children?: ReactNode
 }
 
-class ErrorBoundary extends Component<errorBoundaryType> {
+class ErrorBoundary extends Component<errorBoundaryType, any> {
    constructor(props: any) {
       super(props);
    }

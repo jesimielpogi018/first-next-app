@@ -28,7 +28,11 @@ function watchWindowWidth(callback: Function) {
    };
 }
 
-const Navigation: NextPage = () => {
+interface Props {
+
+}
+
+const Navigation: NextPage<Props> = () => {
    const [isDisplayed, setDisplay] = useState<boolean>(false);
 
    useEffect(() => {

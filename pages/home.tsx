@@ -2,12 +2,16 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import { NextPage } from "next/types";
 import Head from "next/head";
-import React, {  } from "react";
+import React, { useEffect } from "react";
 
 // components
-import Navigation from "@layouts/Navigation";
+import Navigation from "@pages/home/Home-Navigation";
 
 const Home: NextPage = () => {
+
+   useEffect(() => {
+      
+   }, []);
 
    return (
       <>
