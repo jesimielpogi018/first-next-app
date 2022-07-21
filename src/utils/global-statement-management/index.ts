@@ -4,54 +4,48 @@ import React from "react";
 import HOC from "./src/Enchant";
 import Parent from "./src/Parent";
 
+// class component global statement management
+import { ClassInitGMS } from "./src/class-GMS";
+import { state, stateInformation } from "./src/class-storage";
+
+
+// dependencies
+import { generateID } from "./src/id-generator";
+
+
 export interface createSMSObject {
-   addState: Function,
-   setState: Function,
-   Parent: any
+   addState: Function;
+   setState: Function;
+   Parent: any;
 }
 
-const stateInformation: Object = {
-
-};
-
-const state: Object = {
-
-};
-
-function createGMS<T extends React.Component>(owner: T, states: Object = {}) {
-
+function connectGMS(manager: any, states: Object = {}) {
+   
    function init() {
       if (states === {}) return;
+
       for (const [key, value] of Object.entries(states)) {
+         if ((state as any)[key] !== undefined) {
+            console.error("Key name is not empty, choose different name to the state");
+            throw new Error("Naming Error: States that want to be the store must be uniquely named");
+         };
+         
          (state as any)[key] = value;
       }
    }
+}
 
-   function addState<T>(key: string, value: T) {
-      if ((state as any)[key] !== undefined) return;
+function createGMS() {
+   function init() {}
 
+   function reinitialize() {}
 
-
-   }
-
-   function setState<T>(key: string, value: T) {
-      if ((state as any)[key] === undefined) return;
-
-
-
-   }
-
-   const obj = Object.create({
-      addState: addState,
-      setState: setState
+   return Object.create({
+      init: init,
+      reinitialize: reinitialize,
    });
-
-   init();
-   return obj;
 }
 
-function useGMS<T>() {
-
-}
+function useGMS() {}
 
 export { createGMS, useGMS };
