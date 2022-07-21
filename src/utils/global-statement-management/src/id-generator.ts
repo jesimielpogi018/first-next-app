@@ -73,14 +73,15 @@ function randomize(format: string): string {
    let pattern = /x/;
 
    while (pattern.test(format)) {
-      let randomChar = array[Math.floor(Math.random() * array.length -2)];
+      let randomChar = array[Math.floor(Math.random() * array.length - 2)];
 
       format = format.replace(/x/i, randomChar);
    }
    
    // check if the generated iD is already in used.
-   if ((generatedID as any)[format] !== undefined)
+   if ((generatedID as any)[format] !== undefined) {
       return randomize(beforeFormat);
+   }
 
    (generatedID as any)[format] = true;
    return format;

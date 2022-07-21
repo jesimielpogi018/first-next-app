@@ -35,6 +35,9 @@
       "@pages/*": [
         "./src/pages/*"
       ],
+      "@url/*": [
+        "./pages/*"
+      ],
       "@styles/*": [
         "./styles/*"
       ],

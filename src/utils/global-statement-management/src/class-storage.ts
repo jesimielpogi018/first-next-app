@@ -17,36 +17,31 @@ export const stateInformation: StateInformationType = {
 
 export const state: StateType = {};
 
-
-
-
-
-
 // state information object structure.
-const data = {
-   owner: "managerID | generatedID",
-   initialState: {
-      "components owner": {
-         data: {
-            /* initial state */
-         },
-      },
-      "components owners": {
-         data: {
-            /* initial state */
-         },
-      },
-   },
-   state: {
-      "components owner": {
-         data: {
-            /* initial state */
-         },
-      },
-      "components owners": {
-         data: {
-            /* initial state */
-         },
-      },
-   },
-};
+// const data = {
+//    owner: "managerID | generatedID",
+//    initialState: {
+//       "components owner": {
+//          data: {
+//             /* initial state */
+//          },
+//       },
+//       "components owners": {
+//          data: {
+//             /* initial state */
+//          },
+//       },
+//    },
+//    state: {
+//       "components owner": {
+//          data: {
+//             /* initial state */
+//          },
+//       },
+//       "components owners": {
+//          data: {
+//             /* initial state */
+//          },
+//       },
+//    },
+// };

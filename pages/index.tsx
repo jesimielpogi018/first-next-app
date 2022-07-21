@@ -5,9 +5,11 @@ import Head from "next/head";
 import { createManagement } from "@utilities/global-statement-management/index";
 
 // components
+import TestClass from "@components/TestClass";
+import TestFunction from "@components/TestFunction";
 
 // state manager
-const manager = createManagement();
+export const manager = createManagement("Index");
 
 class Home extends Component<any, any> {
 
@@ -15,6 +17,8 @@ class Home extends Component<any, any> {
 
    constructor(props: any) {
       super(props);
+
+      manager.add(this, this.state);
 
       this.handleLog = this.handleLog.bind(this);
    }
@@ -30,6 +34,9 @@ class Home extends Component<any, any> {
             <Head>
                <title>Home</title>
             </Head>
+
+            <TestClass />
+            <TestFunction />
 
             <button onClick={this.handleLog}>Log</button>
          </>
