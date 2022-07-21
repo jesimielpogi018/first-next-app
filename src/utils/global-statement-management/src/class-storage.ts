@@ -1,12 +1,26 @@
-interface StateInformationType {}
+export interface ManagerInformationType {
+   owner: string,
+   type: "class" | "function",
+   initialState: Object,
+   state: Object
+}
+
+interface StateInformationType {
+   data: Array<ManagerInformationType>
+}
 
 interface StateType {}
 
-export const stateInformation: Object = {
+export const stateInformation: StateInformationType = {
    data: [],
 };
 
-export const state: Object = {};
+export const state: StateType = {};
+
+
+
+
+
 
 // state information object structure.
 const data = {

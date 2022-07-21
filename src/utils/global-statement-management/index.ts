@@ -5,8 +5,7 @@ import HOC from "./src/Enchant";
 import Parent from "./src/Parent";
 
 // class component global statement management
-import GMSWorker, { GMSManager } from "./src/class-GMS";
-import { state, stateInformation } from "./src/class-storage";
+import { state, stateInformation, ManagerInformationType } from "./src/class-storage";
 
 // dependencies
 import { generateID } from "./src/id-generator";
@@ -16,6 +15,15 @@ interface CreateManagementType {
    addStore: Function;
 }
 
+interface AddStorageReturnType {
+   add: Function,
+   set: Function,
+   all: Function,
+   initial: Function,
+   remove: Function,
+   revert: Function
+}
+
 function createManagement(name: string = ""): CreateManagementType {
    let managerID: string = name;
 
@@ -23,20 +31,34 @@ function createManagement(name: string = ""): CreateManagementType {
       managerID = generateID();
    }
 
-   const manager = new GMSManager(managerID);
+   function addStorage(workerName: string = "", type: "class" | "function", initialState: Object = {}) {
 
-   function addStorage(workerName: string = "", states: Object = {}) {
+      if (workerName === "") workerName = generateID();
 
+      let data: ManagerInformationType = {
+         owner: managerID,
+         type: type,
+         initialState: {  },
+         state: {  }
+      };
 
       function init() {
-         if (states === {}) return;
+         if (initialState === {}) return;
          
-         for (const [key, value] of Object.entries(states)) {
-
+         for (const [key, value] of Object.entries(initialState)) {
+            if ((data.initialState as any)[key] !== undefined) return;
+            (data.initialState as any)[key] = value;
+            (data.state as any)[key] = value;
          }
       }
 
-      function addState() {}
+      function addState(key: string | Function, value: string) {
+         if (key instanceof Function) {
+
+         } else {
+
+         }
+      }
 
       function setState() {}
 
@@ -46,15 +68,32 @@ function createManagement(name: string = ""): CreateManagementType {
 
       function remove() {}
 
-      return Object.create({});
+      function revert() {}
+
+      init();
+
+      stateInformation.data.push(data);
+
+      return Object.create({
+         add: addState,
+         set: setState,
+         all: all,
+         initial: initial,
+         remove: remove,
+         revert: revert
+      });
    }
 
-   return Object.create({
+   const obj = {
       ID: managerID,
       addStore: addStorage,
-   });
+   };
+
+   return obj;
 }
 
-function connectManagement(bossID: string, states: Object = {}) {}
+function connectManagement(parent: string, child: string) {
+
+}
 
 export { createManagement };
