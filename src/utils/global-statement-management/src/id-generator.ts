@@ -73,9 +73,9 @@ function randomize(format: string): string {
    let pattern = /x/;
 
    while (pattern.test(format)) {
-      let randomChar = array[Math.floor(Math.random() * array.length - 1)];
+      let randomChar = array[Math.floor(Math.random() * array.length -2)];
 
-      format.replace(/x/gi, randomChar);
+      format = format.replace(/x/i, randomChar);
    }
    
    // check if the generated iD is already in used.
@@ -91,7 +91,7 @@ export function generateID(format: string = ""): string {
       return randomize("xxx-xxx-xxx");
    }
 
-   if (/[A-WYZ][a-wyz]\d/.test(format)) {
+   if (/[A-Wyz\d]/i.test(format)) {
       console.error(
          "Read at https://random.com on how to specify format in createGMS"
       );
