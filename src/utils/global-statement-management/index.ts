@@ -5,47 +5,56 @@ import HOC from "./src/Enchant";
 import Parent from "./src/Parent";
 
 // class component global statement management
-import { ClassInitGMS } from "./src/class-GMS";
+import GMSWorker, { GMSManager } from "./src/class-GMS";
 import { state, stateInformation } from "./src/class-storage";
-
 
 // dependencies
 import { generateID } from "./src/id-generator";
 
-
-export interface createSMSObject {
-   addState: Function;
-   setState: Function;
-   Parent: any;
+interface CreateManagementType {
+   ID: string;
+   addStore: Function;
 }
 
-function connectGMS(manager: any, states: Object = {}) {
-   
-   function init() {
-      if (states === {}) return;
+function createManagement(name: string = ""): CreateManagementType {
+   let managerID: string = name;
 
-      for (const [key, value] of Object.entries(states)) {
-         if ((state as any)[key] !== undefined) {
-            console.error("Key name is not empty, choose different name to the state");
-            throw new Error("Naming Error: States that want to be the store must be uniquely named");
-         };
-         
-         (state as any)[key] = value;
-      }
+   if (managerID === "") {
+      managerID = generateID();
    }
-}
 
-function createGMS() {
-   function init() {}
+   const manager = new GMSManager(managerID);
 
-   function reinitialize() {}
+   function addStorage(workerName: string = "", states: Object = {}) {
+
+
+      function init() {
+         if (states === {}) return;
+         
+         for (const [key, value] of Object.entries(states)) {
+
+         }
+      }
+
+      function addState() {}
+
+      function setState() {}
+
+      function all() {}
+
+      function initial() {}
+
+      function remove() {}
+
+      return Object.create({});
+   }
 
    return Object.create({
-      init: init,
-      reinitialize: reinitialize,
+      ID: managerID,
+      addStore: addStorage,
    });
 }
 
-function useGMS() {}
+function connectManagement(bossID: string, states: Object = {}) {}
 
-export { createGMS, useGMS };
+export { createManagement };
