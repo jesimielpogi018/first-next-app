@@ -15,6 +15,8 @@
     "experimentalDecorators": true,
     "noEmit": true,
     "typeRoots": ["./src/@types"],
+    "declaration": true,
+    "outDir": "dist",
     "strictNullChecks": true,
     "esModuleInterop": true,
     "module": "esnext",
