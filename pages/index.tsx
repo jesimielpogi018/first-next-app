@@ -1,15 +1,8 @@
 import React, { Component } from "react";
 import Head from "next/head";
 
-// under testing custom global state management
-import { createManagement } from "@utilities/global-statement-management/index";
-
-// components
-import TestClass from "@components/TestClass";
-import TestFunction from "@components/TestFunction";
-
 // state manager
-export const manager = createManagement("Index");
+//export const management = createManagement("Index");
 
 class Home extends Component<any, any> {
    state = { count: 0 };
@@ -22,7 +15,6 @@ class Home extends Component<any, any> {
 
    handleLog() {
       console.log(this.state.count);
-      console.log(manager);
    }
 
    render() {
@@ -31,9 +23,6 @@ class Home extends Component<any, any> {
             <Head>
                <title>Home</title>
             </Head>
-
-            <TestClass />
-            <TestFunction />
 
             <button onClick={this.handleLog}>Log</button>
          </>
