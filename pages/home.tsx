@@ -12,9 +12,9 @@ import Navigation from "@pages/home/Home-Navigation";
 const Home: NextPage = () => {
 
    useEffect(() => {
-      
+      console.log(getSum(10, 20));
    }, []);
-
+   
    return (
       <>
          <Head>
