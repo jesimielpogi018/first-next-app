@@ -4,6 +4,8 @@ import { NextPage } from "next/types";
 import Head from "next/head";
 import React, { useEffect } from "react";
 
+import { getSum } from "../app";
+
 // components
 import Navigation from "@pages/home/Home-Navigation";
 
