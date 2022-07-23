@@ -12,7 +12,9 @@
     "strictFunctionTypes": true,
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
+    "experimentalDecorators": true,
     "noEmit": true,
+    "typeRoots": ["./src/@types"],
     "strictNullChecks": true,
     "esModuleInterop": true,
     "module": "esnext",
@@ -20,6 +22,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
+    "emitDecoratorMetadata": true,
     "incremental": true,
     "baseUrl": ".",
     "paths": {
@@ -56,6 +59,7 @@
   ],
   "exclude": [
     "node_modules",
+    "public",
     ".next"
   ]
 }

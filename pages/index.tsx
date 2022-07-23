@@ -12,13 +12,10 @@ import TestFunction from "@components/TestFunction";
 export const manager = createManagement("Index");
 
 class Home extends Component<any, any> {
-
    state = { count: 0 };
 
    constructor(props: any) {
       super(props);
-
-      manager.add(this, this.state);
 
       this.handleLog = this.handleLog.bind(this);
    }
