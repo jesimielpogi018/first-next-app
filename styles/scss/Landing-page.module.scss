@@ -1,0 +1,127 @@
+@mixin width-468px {
+
+}
+
+@mixin width-768px {
+
+}
+
+@mixin width-968px {
+
+}
+
+@mixin width-1168px {
+
+}
+
+@mixin width-1600px {
+
+}
+
+@mixin width-container {
+
+}
+
+@mixin w {
+   width: 100%;
+}
+
+@mixin b-b-n {
+   background: none;
+   border: none;
+   outline: none;
+}
+
+.burger {
+   display: block;
+   position: absolute;
+}
+
+.header {
+   @include w;
+   height: 60px;
+   border-bottom: 1px solid rgba(17, 12, 46, 0.15);
+   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+
+
+.nav {
+   @include w;
+   display: flex;
+   height: 100%;
+   flex-flow: row no-wrap;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.header_logo {
+   margin: 0;
+   font-size: 2rem;
+   cursor: pointer;
+}
+
+.nav_container {
+   width: 40%;
+   display: flex;
+   flex-flow: row no-wrap;
+   justify-content: space-evenly;
+   align-items: center;
+
+   a {
+      font-size: 1.2rem;
+      transition: all .25s ease;
+
+      &:hover {
+         transform: translateY(-2px);
+      }
+   }
+}
+
+.search_bar {
+   display: flex;
+   flex-flow: row no-wrap;
+   justify-content: space-evenly;
+   align-items: center;
+
+
+   input {
+      @include b-b-n;
+      border-bottom: 3px solid hsla(0, 0%, 36%, 0.39);
+   }
+
+   button {
+      @include b-b-n;
+
+      svg {
+         
+      }
+   }
+}
+
+.main {
+   @include w;
+
+}
+
+.landing_page {
+   display: flex;
+   flex-flow: row nowrap;
+}
+
+.landing_texts {
+
+}
+
+.landing_images {
+
+}
+
+.section {
+   @include w;
+
+}
+
+.footer {
+   @include w;
+
+}
