@@ -1,26 +1,4 @@
-@mixin width-468px {
-
-}
-
-@mixin width-768px {
-
-}
-
-@mixin width-968px {
-
-}
-
-@mixin width-1168px {
-
-}
-
-@mixin width-1600px {
-
-}
-
-@mixin width-container {
-
-}
+@import "./utils/_container.scss", "utils/center";
 
 @mixin w {
    width: 100%;
@@ -39,6 +17,7 @@
 
 .header {
    @include w;
+   @include center;
    height: 60px;
    border-bottom: 1px solid rgba(17, 12, 46, 0.15);
    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
@@ -46,7 +25,7 @@
 
 
 .nav {
-   @include w;
+   @include space-control;
    display: flex;
    height: 100%;
    flex-flow: row no-wrap;
