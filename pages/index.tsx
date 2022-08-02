@@ -1,3 +1,4 @@
+/* eslint-disable quotes */
 /* eslint-disable curly */
 import React, { Component } from "react";
 import styles from "@styles/scss/Landing-page.module.scss";
@@ -8,9 +9,6 @@ import Link from "next/link";
 const componentDidMountOnRun = {
    didWidthCheckerMounted: false,
 };
-
-// component/s
-import Container from "@layouts/Container";
 
 const checkWidth = (): boolean => !(innerWidth >= 1100);
 
@@ -72,35 +70,33 @@ class Home extends Component<any, any> {
 
             <header className={styles.header}>
                <nav className={styles.nav}>
-                  <Container>
-                     <Link href="/">
-                        <a>
-                           <h1 className={styles.header_logo}>CubeCodeX</h1>
-                        </a>
+                  <Link href="/">
+                     <a>
+                        <h1 className={styles.header_logo}>CubeCodeX</h1>
+                     </a>
+                  </Link>
+
+                  <div className={styles.nav_container}>
+                     <Link href="">
+                        <a>Docs</a>
                      </Link>
+                     <Link href="">
+                        <a>Community</a>
+                     </Link>
+                     <Link href="">
+                        <a>Contribute</a>
+                     </Link>
+                     <Link href="">
+                        <a>Donate</a>
+                     </Link>
+                     <Link href="">
+                        <a className={styles.sign_up}>Sign In</a>
+                     </Link>
+                  </div>
 
-                     <div className={styles.nav_container}>
-                        <Link href="">
-                           <a>Docs</a>
-                        </Link>
-                        <Link href="">
-                           <a>Community</a>
-                        </Link>
-                        <Link href="">
-                           <a>Contribute</a>
-                        </Link>
-                        <Link href="">
-                           <a>Donate</a>
-                        </Link>
-                        <Link href="">
-                           <a className={styles.sign_up}>Sign In</a>
-                        </Link>
-                     </div>
-
-                     <div className={styles.icons}>
-                        <p>Test</p>
-                     </div>
-                  </Container>
+                  <div className={styles.icons}>
+                     <p>Test</p>
+                  </div>
                </nav>
             </header>
 

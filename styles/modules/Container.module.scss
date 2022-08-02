@@ -1,4 +1,25 @@
-.container {
-   height: 100%;
-   width: 100%;
+@mixin space-control {
+   @media screen and (max-width: 468px) {
+
+   }
+
+   @media screen and (min-width: 768px) {
+      
+   }
+
+   @media screen and (min-width: 968px) {
+      
+   }
+
+   @media screen and (min-width: 1168px) {
+      
+   }
+
+   @media screen and (min-width: 1368px) {
+      
+   }
+
+   @media screen and (min-width: 1600px) {
+      
+   }
 }
