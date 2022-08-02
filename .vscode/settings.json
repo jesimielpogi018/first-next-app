@@ -1,11 +1,12 @@
 {
    "editor.acceptSuggestionOnEnter": "off",
    "editor.hover.delay": 500,
-   "editor.quickSuggestionsDelay": 750,
+   "editor.quickSuggestionsDelay": 1250,
    "cSpell.words": [
       "Charis",
       "eqeqeq",
       "NEXTJS",
+      "svgr",
       "TVRL",
       "yielltheprogrammer"
    ]

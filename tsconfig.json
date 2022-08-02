@@ -52,6 +52,9 @@
       ],
       "@utilities/*": [
         "./src/utils/*"
+      ],
+      "@assets/*": [
+        "./src/assets/*"
       ]
     }
   },
